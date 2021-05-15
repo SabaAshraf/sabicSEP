@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SABIC Search Engine Portal</title>
+  <!--Bootstrap css CDN-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!--Font Awesome-->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" /> -->
+  <!-- font awesome pro -->
+  <link rel="stylesheet" href="https://dev.apexure.org/fontawesomepro/css/all.min.css">
+  <!--Datepicker css-->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
+    crossorigin="anonymous" />
+  <!--Simple Pagination Css-->
+  <link type="text/css" rel="stylesheet" href="css/simplePagination.css" />
+  <!--Reset Styles-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <!-- custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="mainWrapper">
+    <section class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="profileLocation">
+              <ul class="nav nav-tabs d-flex flex-wrap justify-content-between" id="portalTab" role="tablist">
+                <li class="nav-item waves-effect waves-light">
+                  <a class="nav-link active" id="userprofile-tab" data-toggle="tab" href="#userProfile" role="tab"
+                    aria-controls="userProfile" aria-selected="true">User Profile</a>
+                </li>
+                <li class="nav-item waves-effect waves-light">
+                  <a class="nav-link" id="locationmap-tab" data-toggle="tab" href="#locationMap" role="tab"
+                    aria-controls="locationMap" aria-selected="true">Location Map</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 offset-md-1">
+            <div class="searchContainer">
+              <form action="index.html" autocomplete="off">
+                <button type="submit" class="searchBtn"><i class="fal fa-search"></i></button>
+                <input type="text" placeholder="Search" name="search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portalSection">
+      <div class="container-fluid">
+        <div class="portalInnerWrapper d-flex">
+          <div class="leftWrap px-3 pt-5">
+            <!--Calender Area starts-->
+            <div class="calenderArea">
+              <div class="form-group  d-flex justify-content-between">
+                <div class="datepickerWrap sameBorder input-group" id="datepicker-1">
+                  <label class="control-label sameBorderBottom" for="fromdate">From Date</label>
+                  <div class="input-group-append appendFields">
+                    <input class="form-control" id="fromdate" name="fromdate" placeholder="12/03/2021" type="text" />
+                    <div class="input-group-append"><span class="input-group-text"> <i class="far fa-calendar-alt"
+                          id="fromCal"></i></span></div>
+                  </div>
+                </div>
+                <div class="datepickerWrap sameBorder input-group" id="datepicker-2">
+                  <label class="control-label sameBorderBottom" for="todate">To Date</label>
+                  <div class="input-group-append appendFields">
+                    <input class="form-control" id="todate" name="todate" placeholder="03/05/2021" type="text" />
+                    <div class="input-group-append"><span class="input-group-text"> <i class="far fa-calendar-alt"
+                          id="toCal"></i></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Calender Area Ends-->
+            <!--CheckBoxes Start-->
+            <div class="authorCheckBox sameBorder sameMt">
+              <h5 class="sameBorderBottom samePaddingHeader checkHeader">Author (4)</h5>
+              <div class="sameStyleForm authorForm samePaddingBody">
+                <div class="form-group form-check d-flex align-items-center">
+                  <input type="checkbox" class="form-check-input" id="auth-1">
+                  <label class="form-check-label" for="auth-1">Kumar, Ajay</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="auth-2">
+                  <label class="form-check-label" for="auth-2">Rao, Narayana</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="auth-3">
+                  <label class="form-check-label" for="auth-3">Sikder, Arun</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="auth-4">
+                  <label class="form-check-label" for="auth-4">Center</label>
+                </div>
+              </div>
+            </div>
+            <div class="docCheckBox sameBorder sameMt">
+              <h5 class="sameBorderBottom samePaddingHeader checkHeader">Document Type (4)</h5>
+              <div class="sameStyleForm doctypeForm samePaddingBody">
+                <div class="form-group form-check d-flex align-items-center">
+                  <input type="checkbox" class="form-check-input" id="doc-1">
+                  <label class="form-check-label" for="doc-1">Word Document</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="doc-2">
+                  <label class="form-check-label" for="doc-2">PDF</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="doc-3">
+                  <label class="form-check-label" for="doc-3">Excel</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="doc-4">
+                  <label class="form-check-label" for="doc-4">PPT</label>
+                </div>
+              </div>
+            </div>
+            <div class="resCheckBox sameBorder sameMt">
+              <h5 class="sameBorderBottom samePaddingHeader checkHeader">Resources (3)</h5>
+              <div class="sameStyleForm resourcesForm samePaddingBody">
+                <div class="form-group form-check d-flex align-items-center">
+                  <input type="checkbox" class="form-check-input" id="res-1">
+                  <label class="form-check-label" for="res-1">KMP</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="res-2">
+                  <label class="form-check-label" for="res-2">ECM</label>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="res-3">
+                  <label class="form-check-label" for="res-3">ELN</label>
+                </div>
+              </div>
+            </div>
+            <!--CheckBoxes End-->
+          </div>
+          <div class="tab-content" id="portalTabContent">
+            <!--User Profile tab starts-->
+            <div class="tab-pane fade active show" id="userProfile" role="tabpanel" aria-labelledby="userprofile-tab">
+              <div class="rightOuterWrapper d-flex">
+                <div class="centerWrap px-2 pt-5">
+                  <div class="searchResultContainer">
+                    <div class="searchResultInnerContainer sameBorder">
+                      <h5 class="sameBorderBottom samePaddingHeader searchHeading">Search Results for <b>Peeters</b><small> (2 results
+                          found)</small></h5>
+                      <div class="searchResultContent">
+                        <p class="thinBorderBottom topHeading">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                          sed do eiusmod
+                          tempor incididunt ut labore et dolore
+                        </p>
+                        <div class="list-item thinBorderBottom">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+                          </p>
+
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+
+                        <div class="list-item">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+
+                        <div class="list-item thinBorderBottom">
+                          <p>Test Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+
+                        <div class="list-item">
+                          <p>Test Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="paginationContainer mt-4"></div>
+                  </div>
+                </div>
+                <div class="rightWrap px-3 pt-5">
+                  <div class="empDetailsContainer sameBorder">
+                    <h5 class="sameBorderBottom samePaddingHeader searchHeading text-white text-center empHeading">B.M.H. Peeters</h5>
+                    <div class="empDetails d-flex">
+                      <div class="empImage">
+                        <img src="assets/peteers.png" alt="Peeters" class="img-fluid">
+                      </div>
+                      <div class="idDetails">
+                        <p class="italic text-right">Last Updated Date: 02/05/2021</p>
+                        <div class="empLoginId d-flex align-items-center">
+                          <p>Employee ID: 51900</p>
+                          <span>|</span>
+                          <p>Login ID: SABICCORP\312743</p>
+                        </div>
+                        <p class="empEmail d-flex align-items-center">
+                          <i class="fas fa-envelope"></i>
+                          <a href="">Bas.Peeters@SABIC.com</a>
+                        </p>
+                      </div>
+                    </div>
+                    <ul class="employeeResume">
+                      <li class="thinBorderBottom">SBU: Engineering & Project Management</li>
+                      <li class="thinBorderBottom">Education: University of Technology, Eihndoven, the Netherlands Process Engineering</li>
+                      <li class="thinBorderBottom">Expertise: Project Management</li>
+                      <li class="thinBorderBottom">Projects: Higher Alpha Olefins, Gelsenkirchin PPE-Recommissioning, Bergen op Zoom @Europe, Geleen</li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <p class="d-flex align-items-center">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Sittard Netherlands</span>
+                        </p>
+                        <p class="d-flex align-items-center">
+                          <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link">
+                          <a href="">SABICCORP\312743</a>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="similarProfileContainer sameBorder mt-5">
+                    <h5 class="sameBorderBottom samePaddingHeader searchHeading">Similar Profile (2)</h5>
+                    <div class="similarItemsWrapper">
+                      <ul class="d-flex align-items-center similarItemList">
+                        <li class="text-center">
+                          <div class="similarItemImage">
+                            <img src="assets/ajay-patnaik.png" alt="ajay-patnaik" class="img-fluid">
+                          </div>
+                          <h5>Ajay Patnaik</h5>
+                          <a href="">ajay.patnaik@SABIC.com</a>
+                          <p class="d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link">
+                            <a href="">SABICCORP\312743</a>
+                          </p>
+                        </li>
+                        <li class="text-center">
+                          <div class="similarItemImage">
+                            <img src="assets/ajay-kumar.png" alt="ajay-patnaik" class="img-fluid">
+                          </div>
+                          <h5>Ajay Kumar</h5>
+                          <a href="">ajay.kumar@SABIC.com</a>
+                          <p class="d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link">
+                            <a href="">SABICCORP\312743</a>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <a href="" class="seeAll d-flex align-items-center justify-content-end">
+                      <span>See All</span>
+                      <i class="far fa-angle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--User Profile tab Ends-->
+            <!--location tab starts-->
+            <div class="tab-pane fade" id="locationMap" role="tabpanel" aria-labelledby="locationmap-tab">
+              <div class="rightOuterWrapper d-flex">
+                <div class="centerWrap px-2 pt-5">
+                  <div class="searchResultContainer">
+                    <div class="searchResultInnerContainer sameBorder">
+                      <h5 class="sameBorderBottom samePaddingHeader searchHeading">Search Results for <b>Morocco</b><small> (2 results
+                          found)</small></h5>
+                      <div class="searchResultContent">
+                        <p class="thinBorderBottom topHeading">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                          sed do eiusmod
+                          tempor incididunt ut labore et dolore
+                        </p>
+                        <div class="list-item thinBorderBottom">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+
+                        <div class="list-item">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+
+                        <div class="list-item thinBorderBottom">
+                          <p>Test Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+
+                        <div class="list-item">
+                          <p>Test Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                          </p>
+                          <p class="attachmentLink d-flex align-items-center">
+                            <img src="assets/link.svg" width="20" height="20" class="attachmentIcon" alt="link"><a href="#">Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation</a>
+                          </p>
+                          <div class="itemDetails d-flex align-items-center justify-content-between">
+                            <p>Last Modified: 2020-01-17</p>
+                            <p>Resource KMP</p>
+                            <p>Relevance Score: 12.97</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="paginationContainer mt-4"></div>
+                  </div>
+                </div>
+                <div class="rightWrap px-3 pt-5">
+                  <div class="empDetailsContainer sameBorder">
+                    <h5 class="sameBorderBottom samePaddingHeader searchHeading text-white text-center empHeading locHeading d-flex justify-content-center">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>MOROCCO - SABIC MOROCCO & WEST AFRICA SARL.AU</span>
+                    </h5>
+                    <div class="locationMapContainer">
+                      <div class="locImage">
+                        <img src="assets/map.png" alt="map" class="img-fluid">
+                      </div>
+                    </div>
+                    <ul class="employeeResume officeAddress">
+                      <li class="thinBorderBottom d-flex align-items-center">
+                        <p>Type: Office</p>
+                        <p>Region: MEA</p>
+                      </li>
+                      <li class="thinBorderBottom">Country: Morocco</li>
+                      <li class="thinBorderBottom">Address: Crystal 1 Building, 7th Floor,Al Mohades Avenue,Marina,Business Center, Casablanca, Morocco</li>
+                      <li class="thinBorderBottom d-flex align-items-center">
+                        <p>Open Time: NA</p>
+                        <p>Close Time: NA</p>
+                      </li>
+                      <li class="d-flex justify-content-between align-items-center">
+                        <p class="d-flex align-items-center">
+                          <i class="fas fa-phone rotatePhone"></i>
+                          <span>+212537751702/03</span>
+                        </p>
+                        <p class="d-flex align-items-center">
+                          <i class="fas fa-phone-office"></i>
+                          <span>+212537751702/03</span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="similarProfileContainer sameBorder mt-5">
+                    <h5 class="sameBorderBottom samePaddingHeader searchHeading">Similar Location (2)</h5>
+                    <div class="similarItemsWrapper">
+                      <ul class="d-flex align-items-center similarItemList">
+                        <li>
+                          <div class="similarItemImage">
+                            <img src="assets/map.png" alt="map" class="img-fluid map">
+                          </div>
+                          <p class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="">Location Name</a>
+                          </p>
+                          <p class="ml-3">Type: Office</p>
+                          <p class="ml-3">Country: Name 1</p>
+                        </li>
+                        <li>
+                          <div class="similarItemImage">
+                            <img src="assets/map.png" alt="map" class="img-fluid map">
+                          </div>
+                          <p class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="">Location Name</a>
+                          </p>
+                          <p class="ml-3">Type: Office</p>
+                          <p class="ml-3">Country: Name 2</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <a href="" class="seeAll d-flex align-items-center justify-content-end">
+                      <span>See All</span>
+                      <i class="far fa-angle-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--location tab Ends-->
+          </div>
+          <!--Tab Content Ends-->
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--Scripts-->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+  </script>
+  <!--Bootstrap Datepicker-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+    integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
+    crossorigin="anonymous"></script>
+  <!--Simple Pagination jQuery-->
+  <script src="js/jquery.simplePagination.js"></script>
+  <!-- custom scripts -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

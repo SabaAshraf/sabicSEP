@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+body{
+  padding: 45px 0px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #2e4a65;
+}
+a{
+  color: #6771ec;
+}
+a:hover{
+  text-decoration: none;
+}
+.form-control:focus,.searchBtn:focus{
+  outline: none;
+  box-shadow: none;
+}
+.searchContainer form {
+  position: relative;
+}
+.searchContainer form button {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  border: none;
+  background: none;
+}
+.searchContainer form input {
+  padding: 7px 10px 7px 40px;
+  border-radius: 5px;
+  width: 78%;
+  border: 1px solid rgba(95, 95, 96, 50%);;
+  background-color:transparent;
+  font-size: 12px;
+  line-height: 24px;
+}
+.searchContainer form input:focus{
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(29 29 27 / 15%);
+}
+.nav-tabs,.nav-tabs .nav-link.active,
+.nav-tabs .nav-link,
+.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:hover{
+  border: none;
+}
+.nav-tabs .nav-link{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+}
+.nav-tabs .nav-link:hover{
+  color:#6771ec;
+}
+.nav-tabs .nav-link.active{
+  color:#909294;
+}
+.calenderArea .datepickerWrap,.profileLocation h3{
+  flex-basis: 40%;
+}
+.datepickerWrap label,.appendFields{
+  flex-basis: 100%;
+  padding: 2px 10px;
+}
+.datepickerWrap .form-control,.input-group-text{
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  height: auto;
+}
+.datepicker td, .datepicker th {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.85rem;
+}
+.datepicker {
+  margin-bottom: 3rem;
+  position: absolute;
+  background: #fff;
+  z-index: 9999;
+  top: 72px;
+  border: 1px solid #dadce0;
+  width: 200px;
+}
+.appendFields input,.datepickerWrap label,.input-group-text{
+  font-size: 12px;
+  line-height: 24px;
+}
+.datepickerWrap label{
+  color: #584c4c;
+}
+.hideCalender{
+  visibility: hidden;
+}
+.input-group-append {
+  margin-left: 0px;
+  position: relative;
+}
+.sameBorder{
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding:0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.sameBorderBottom{
+  border-bottom: 1px solid #dadce0;
+}
+.samePaddingHeader{
+  padding: 6px 10px;
+}
+.samePaddingBody{
+  padding: 15px 10px;
+}
+.sameStyleForm .form-check{
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.sameStyleForm .form-check:last-child{
+  margin-bottom: 15px;
+}
+.sameMt{
+  margin-top: 30px;
+}
+/* custom checkbox */
+.custom-checkbox {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 0 8px 0 -20px;
+	border: 1px solid rgb(192, 192, 192);
+	background: white;
+	box-sizing: border-box;
+}
+
+.custom-checkbox.checked {
+	background: #2e4a65;
+	position: relative;
+	border: 0;
+}
+
+.checked:after {
+	content: "";
+	position: absolute;
+	display: block;
+  left: 0;
+	right: 0;
+  margin: 0 auto;
+	top: 0;
+	width: 5px;
+	height: 11px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+input[type="checkbox"] {
+	height: 14px;
+	width: 14px;
+	opacity: 0;
+	margin: 0 0 0 -20px;
+}
+.checkHeader{
+  color: #584c4c;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+/*pagination*/
+.paginationContainer ul{
+  display: flex;
+  justify-content: flex-end;
+}
+.paginationContainer ul li a{
+  margin: 0;
+}
+.paginationContainer ul li a,.paginationContainer ul li a span,
+.current.prev .back,.current.next .forward{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  color: #6771ec;
+}
+.paginationContainer ul li.disabled span{
+  color: #818182;
+}
+.current.prev,.current.next{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+}
+.paginationContainer ul li.active span.current{
+  background: #6771ec;
+}
+.paginationContainer ul li span,.paginationContainer ul li a{
+  border-radius: 50px;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paginationContainer ul li:first-child span,.paginationContainer ul li:last-child span,
+.paginationContainer ul li:first-child a,.paginationContainer ul li:last-child a{
+  width: 85px; 
+}
+.paginationContainer ul li{
+  border: 1px solid #dadce0;
+  padding: 5px 10px;
+  border-right: none;
+  border-left: none;
+}
+.paginationContainer ul li:first-child,.paginationContainer ul li:last-child{
+  border-radius: 8px;
+  padding: 5px 5px;
+  border-left: 1px solid  #dadce0;
+  border-right: 1px solid  #dadce0;
+}
+.paginationContainer ul li:first-child{
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+.paginationContainer ul li:last-child{
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+
+/*search results container*/
+.searchResultContent{
+  padding: 0px 10px 85px 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.topHeading{
+  padding: 12px 0;
+}
+.thinBorderBottom{
+  border-bottom: 0.5px solid #dadce0;
+}
+.searchHeading{
+  font-size: 13px;
+  color: #584c4c;
+}
+.searchHeading b{
+  font-weight: 600;
+}
+.searchHeading small{
+  font-size: 12px;
+}
+.list-item{
+  padding: 15px 0;
+}
+.list-item p{
+  margin-bottom: 15px;
+}
+.list-item:nth-of-type(even) p.attachmentLink{
+  margin-top: 50px;
+}
+.attachmentIcon{
+  margin-right: 10px;
+}
+.itemDetails p{
+  margin-bottom: 0;
+  color: #909294;
+}
+/*Container Styles*/
+.leftWrap{
+  flex-basis: 22%;
+}
+.tab-content{
+  flex-basis: 78%;
+}
+.centerWrap{
+  flex-basis: 66%;
+}
+.rightWrap{
+  flex-basis: 36%;
+}
+/*Container Styles End*/
+.empHeading{
+  background: gray;
+  border-radius: 8px;
+}
+.empDetails{
+  padding: 8px 6px;
+  justify-content: space-evenly;
+} 
+.empImage{
+  margin-top: -32px;
+}
+.idDetails p.italic{
+  font-size: 9px;
+  font-style: italic;
+  color: #909294;
+}
+.empLoginId{
+  color: #000;
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 8px;
+} 
+.empEmail i,ul.employeeResume li i,
+.similarItemList i,.locHeading i{
+  margin-right: 5px;
+}
+.empLoginId p:first-child{
+  margin-right: 2px;
+}
+.empLoginId p:last-child{
+  margin-left: 2px;
+}
+.empEmail{
+  font-size: 12px;
+} 
+.empEmail i,ul.employeeResume li i,
+.similarItemList i{
+  color: #909294;
+  font-size: 16px;
+}
+ul.employeeResume{
+  padding: 0px 12px;
+}
+ul.employeeResume li,ul.similarItemList li,.seeAll{
+  font-size: 12px;
+  line-height: 18px;
+}
+ul.employeeResume li:last-child{
+  padding: 15px 0px;
+}
+ul.employeeResume li:first-child{
+  border-top: 0.5px solid #dadce0;
+}
+ul.officeAddress li:first-child{
+  border-top: none;
+}
+ul.officeAddress li:first-child p,
+ul.officeAddress li:nth-of-type(4) p,
+ul.officeAddress li:last-child p{
+  flex-basis: 50%;
+}
+ul.similarItemList{
+  justify-content: space-around;
+}
+.similarItemsWrapper,ul.employeeResume li{
+  padding: 8px 0px;
+}
+ul.similarItemList li{
+  padding: 8px 10px;
+  line-height: 22px;
+}
+ul.similarItemList li:first-child{
+  border-right: .5px solid #dadce0;
+}
+.seeAll{
+  padding: 10px;
+  color: #909294;
+} 
+.seeAll i{
+  margin-left: 5px;
+  font-size: 16px;
+}
+.locHeading{
+  padding: 15px 10px;
+  align-items: baseline;
+}
+.locationMapContainer .locImage img{
+  margin: -16px auto 0 auto;
+  display: block;
+}
+.locationMapContainer .locImage img,.map{
+  border: 1px solid rgba(95, 95, 96, 50%);
+  border-radius: 8px;
+}
+.rotatePhone{
+  transform: rotate(90deg);
+}
