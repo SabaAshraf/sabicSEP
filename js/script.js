@@ -5,8 +5,6 @@ $(document).ready(function(){
       format: "dd/mm/yyyy"
     }).on('change', function(){
       $('.datepicker').hide();
-    }).on('mouseleave',function(){
-      $('.datepicker').hide();
     });
     $('#datepicker-2 .datepicker').hide();
     // $('#datepicker-1 .datepicker').removeClass('hideCalender');
@@ -17,8 +15,6 @@ $(document).ready(function(){
       clearBtn: true,
       format: "dd/mm/yyyy"
     }).on('change', function(){
-      $('.datepicker').hide();
-    }).on('mouseleave',function(){
       $('.datepicker').hide();
     });
     $('#datepicker-1 .datepicker').hide();
