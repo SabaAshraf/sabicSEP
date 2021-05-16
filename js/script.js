@@ -1,17 +1,16 @@
 $(document).ready(function(){
   $('#fromdate,#fromCal').click(function(){
-    $('#datepicker-1').datepicker({
+    $('#fromdate,#fromCal').datepicker({
       clearBtn: true,
       format: "dd/mm/yyyy"
     }).on('change', function(){
       $('.datepicker').hide();
     });
     $('#datepicker-2 .datepicker').hide();
-    // $('#datepicker-1 .datepicker').removeClass('hideCalender');
   });
  
   $('#todate,#toCal').click(function(){
-    $('#datepicker-2').datepicker({
+    $('#todate,#toCal').datepicker({
       clearBtn: true,
       format: "dd/mm/yyyy"
     }).on('change', function(){
@@ -20,11 +19,6 @@ $(document).ready(function(){
     $('#datepicker-1 .datepicker').hide();
   });
 });
-
-// $(document).click(function() {
-//   $('#datepicker-1 .datepicker').addClass('hideCalender');
-// });
-
 
 // custom checkbox
 $(document).ready(function () {
