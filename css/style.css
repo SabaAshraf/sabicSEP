@@ -115,6 +115,8 @@ a:hover{
   margin-bottom: 10px;
   font-size: 12px;
   line-height: 18px;
+  display: flex;
+  align-items: center;
 }
 .sameStyleForm .form-check:last-child{
   margin-bottom: 15px;
